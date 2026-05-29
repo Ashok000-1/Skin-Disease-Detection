@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>SKIN AI– Prediction Result</title>
+<style>
+/* Dark neon theme matching the upload page */
+body {
+  background: radial-gradient(ellipse at center, #1a1a2e 0%, #0f0f0f 100%);
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.result-container {
+  width: 500px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.3);
+  text-align: center;
+  transition: 0.4s ease;
+}
+
+.result-container:hover {
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.9), 0 0 60px rgba(0, 255, 200, 0.8);
+  transform: scale(1.03);
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #00b7ff, #00ffe0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.disease-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.disease-list li {
+  padding: 8px 15px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+  font-size: 14px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.3);
+}
+
+.disease-list li:hover {
+  background: linear-gradient(135deg, #00d0ff, #00ffe7);
+  transform: translateY(-3px) scale(1.07);
+  box-shadow: 0 0 35px rgba(0, 255, 230, 1);
+}
+
+.prediction-result {
+  font-size: 22px;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.prediction-result span {
+  font-weight: 700;
+  background: linear-gradient(135deg, #00c8ff, #00ffe0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.prediction-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 16px;
+  color: #00eaff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.prediction-link:hover {
+  text-shadow: 0 0 20px #00eaff;
+  color: white;
+}
+
+.upload-btn {
+  margin-top: 25px;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #00b7ff, #00ffe1);
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+}
+
+.upload-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 45px rgba(0, 255, 220, 1);
+}
+
+</style>
+</head>
+<body>
+
+<h1>Available Diseases to Predict</h1>
+<ul class="disease-list">
+  <li>Acne</li>
+  <li>Hairloss</li>
+  <li>Nail </li>
+  <li>Normal</li>
+  <li>Skin Allergy</li>
+</ul>
+
+<div class="result-container">
+  <h1>Prediction Result</h1>
+  <p class="prediction-result">
+    Predicted Skin Disease: <span>{{ prediction }}</span>
+  </p>
+  <a class="prediction-link" href="https://en.wikipedia.org/wiki/{{ prediction }}" target="_blank">Learn more about {{ prediction }} on Wikipedia</a>
+</div>
+
+<a class="upload-btn" href="/">Upload another image</a>
+
+</body>
+</html>
